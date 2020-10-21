@@ -12,4 +12,6 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+   description:String = 'This is the short descrption on About us page';
+
 }

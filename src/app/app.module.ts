@@ -16,6 +16,8 @@ import { FooterComponent } from './components/sections/footer/footer.component';
 import { RouterModule} from '@angular/router';
 import { ContainerDisplayerComponent } from './components/sections/container-displayer/container-displayer.component';
 import { ContainerTitleComponent } from './components/sections/container-title/container-title.component';
+import { FormContactComponent } from './components/sections/form-contact/form-contact.component';
+import { CardComponent } from './components/sections/card/card.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ContainerTitleComponent } from './components/sections/container-title/c
     SlideComponent,
     FooterComponent,
     ContainerDisplayerComponent,
-    ContainerTitleComponent
+    ContainerTitleComponent,
+    FormContactComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
