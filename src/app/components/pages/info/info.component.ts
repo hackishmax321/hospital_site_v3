@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CrewService } from 'src/app/services/crew.service';
 
 @Component({
   selector: 'app-info',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
 
-  constructor() { }
+  members = [];
+
+  constructor(private crew_serve: CrewService) { }
 
   ngOnInit(): void {
+    this.members = this.crew_serve.crewProessor();
   }
+  description:String = "This section is all about Information that you neeed to know prior to a propper closure";
 
 }

@@ -10,10 +10,11 @@ export class MedsComponent implements OnInit {
 
   medicines = [];
 
-  constructor(private meds: MedicinesService) { }
+  constructor(private meds: MedicinesService) {}
 
   ngOnInit(): void {
     this.medicines = this.meds.medicinepocessor();
+    console.log(this.medicines);
   }
 
   description:String = 'This is the short descrption on Medicine Displayer page';

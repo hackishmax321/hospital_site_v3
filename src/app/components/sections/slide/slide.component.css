@@ -22,7 +22,7 @@
 
 .wrap-main-flex div:nth-of-type(3){
     padding: 40px;
-    padding-top: 60vh;
+    padding-top: 10vh;
     flex-basis: 40%;
     text-align: right;
 }
@@ -41,4 +41,8 @@
 /* .text-wrap {
 
 } */
+
+.wrap-left {
+    text-align: left;
+}
 
