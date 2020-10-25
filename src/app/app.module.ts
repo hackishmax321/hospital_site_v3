@@ -2,7 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { environment } from '../environments/environment';
+
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+
 import { HomeComponent } from './components/pages/home/home.component';
 import { MedsComponent } from './components/pages/meds/meds.component';
 import { InfoComponent } from './components/pages/info/info.component';
@@ -21,6 +28,11 @@ import { CardComponent } from './components/sections/card/card.component';
 import { CardLgComponent } from './components/sections/card-lg/card-lg.component';
 import { RegisterComponent } from './components/pages/register/register.component';
 import { LoginComponent } from './components/pages/login/login.component';
+
+// Services
+
+import { UserService } from './services/user.service';
+import { AppointmentComponent } from './components/sections/appointment/appointment.component';
 
 @NgModule({
   declarations: [
@@ -41,14 +53,19 @@ import { LoginComponent } from './components/pages/login/login.component';
     CardComponent,
     CardLgComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    AppointmentComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'hospital-management-system'),
+    AngularFirestoreModule
+    
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
