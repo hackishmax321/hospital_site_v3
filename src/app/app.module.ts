@@ -28,11 +28,16 @@ import { CardComponent } from './components/sections/card/card.component';
 import { CardLgComponent } from './components/sections/card-lg/card-lg.component';
 import { RegisterComponent } from './components/pages/register/register.component';
 import { LoginComponent } from './components/pages/login/login.component';
+import { ProfileComponent } from './components/pages/profile/profile.component';
 
 // Services
 
 import { UserService } from './services/user.service';
 import { AppointmentComponent } from './components/sections/appointment/appointment.component';
+import { AppointmentService } from './services/appointment.service';
+import { ContainerTableComponent } from './components/sections/container-table/container-table.component';
+import { ChannelComponent } from './components/pages/channel/channel.component';
+import { SessionService } from './services/session.service';
 
 @NgModule({
   declarations: [
@@ -54,7 +59,10 @@ import { AppointmentComponent } from './components/sections/appointment/appointm
     CardLgComponent,
     RegisterComponent,
     LoginComponent,
-    AppointmentComponent
+    AppointmentComponent,
+    ProfileComponent,
+    ContainerTableComponent,
+    ChannelComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +73,7 @@ import { AppointmentComponent } from './components/sections/appointment/appointm
     
   ],
   exports: [RouterModule],
-  providers: [UserService],
+  providers: [UserService, AppointmentService, SessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

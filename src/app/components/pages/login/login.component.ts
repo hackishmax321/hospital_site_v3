@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ComponentRef, OnInit } from '@angular/core';
 
 import { UserService } from '../../../services/user.service';
 import { User } from '../../../models/user';
+import { Observable } from 'rxjs';
 
 // import { AngularFirestore } from 'angularfire2/firestore';
 
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
-  
+  pass:String;
 
   constructor(public user_service:UserService) { }
 
@@ -29,9 +30,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(){
-    this.user_service.afs.collection('user', ref => ref.where('uname', '==', this.reg_user.uname)).snapshotChanges().subscribe(user=>{
-      console.log(user);
-    });
+    this.user_service.getSingleUser(this.reg_user.uname, this.reg_user.password);
   }
 
 }

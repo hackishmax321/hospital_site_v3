@@ -20,6 +20,8 @@ export class RegisterComponent implements OnInit {
     password: ''
   };
 
+  cpassword:string;
+
   constructor(private user_serve:UserService, private router:Router) { }
 
   ngOnInit(): void {
